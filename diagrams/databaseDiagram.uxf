@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>72</x>
-      <y>90</y>
+      <x>81</x>
+      <y>378</y>
       <w>189</w>
       <h>171</h>
     </coordinates>
@@ -26,8 +26,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>459</x>
-      <y>324</y>
+      <x>297</x>
+      <y>81</y>
       <w>189</w>
       <h>171</h>
     </coordinates>
@@ -50,8 +50,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>126</x>
-      <y>351</y>
+      <x>657</x>
+      <y>108</y>
       <w>189</w>
       <h>171</h>
     </coordinates>
@@ -69,21 +69,21 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>306</x>
-      <y>360</y>
-      <w>171</w>
+      <x>477</x>
+      <y>117</y>
+      <w>198</w>
       <h>45</h>
     </coordinates>
     <panel_attributes>m1=1
 m2=n
 </panel_attributes>
-    <additional_attributes>10.0;30.0;80.0;10.0;170.0;10.0</additional_attributes>
+    <additional_attributes>200.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>387</x>
-      <y>90</y>
+      <y>360</y>
       <w>189</w>
       <h>171</h>
     </coordinates>
@@ -93,9 +93,11 @@ m2=n
 --
 -clientId
 --
--orderDate
+-bookId
 --
--isReturned
+-employeeId
+--
+-orderDate
 --
 -returnDate
 --</panel_attributes>
@@ -104,58 +106,62 @@ m2=n
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>567</x>
-      <y>108</y>
-      <w>189</w>
-      <h>54</h>
+      <x>243</x>
+      <y>99</y>
+      <w>378</w>
+      <h>351</h>
     </coordinates>
     <panel_attributes>m1=1
 m2=n
 </panel_attributes>
-    <additional_attributes>10.0;10.0;100.0;30.0;190.0;30.0</additional_attributes>
+    <additional_attributes>370.0;360.0;400.0;360.0;400.0;210.0;10.0;210.0;10.0;10.0;60.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>639</x>
-      <y>153</y>
-      <w>117</w>
-      <h>234</h>
+      <x>261</x>
+      <y>387</y>
+      <w>144</w>
+      <h>45</h>
     </coordinates>
     <panel_attributes>m1=1
 m2=n
 </panel_attributes>
-    <additional_attributes>10.0;230.0;60.0;230.0;60.0;10.0;110.0;10.0</additional_attributes>
+    <additional_attributes>10.0;20.0;140.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>738</x>
-      <y>90</y>
+      <x>729</x>
+      <y>360</y>
       <w>189</w>
       <h>171</h>
     </coordinates>
-    <panel_attributes>BookOrder
+    <panel_attributes>Employee
 --
 -id
 --
--orderId
+-firstName
 --
--bookId
+-lastName
+--
+-login
+--
+-password
 --</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>252</x>
-      <y>108</y>
-      <w>153</w>
-      <h>54</h>
+      <x>567</x>
+      <y>378</y>
+      <w>180</w>
+      <h>99</h>
     </coordinates>
-    <panel_attributes>m1=1
-m2=n
+    <panel_attributes>m1=n
+m2=1
 </panel_attributes>
-    <additional_attributes>10.0;10.0;80.0;30.0;150.0;30.0</additional_attributes>
+    <additional_attributes>10.0;80.0;130.0;80.0;130.0;10.0;180.0;10.0</additional_attributes>
   </element>
 </diagram>

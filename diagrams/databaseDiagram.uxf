@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>72</x>
+      <y>90</y>
+      <w>189</w>
+      <h>171</h>
+    </coordinates>
+    <panel_attributes>Client
+--
+-id
+--
+-firstName
+--
+-lastName
+--
+-address
+--
+-sex
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>459</x>
+      <y>324</y>
+      <w>189</w>
+      <h>171</h>
+    </coordinates>
+    <panel_attributes>Book
+--
+-id
+--
+-authorId
+--
+-title
+--
+-isbn
+--
+-year
+--
+-quantity
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>126</x>
+      <y>351</y>
+      <w>189</w>
+      <h>171</h>
+    </coordinates>
+    <panel_attributes>Author
+--
+-id
+--
+-firstName
+--
+-lastName
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>306</x>
+      <y>360</y>
+      <w>171</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>m1=1
+m2=n
+</panel_attributes>
+    <additional_attributes>10.0;30.0;80.0;10.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>387</x>
+      <y>90</y>
+      <w>189</w>
+      <h>171</h>
+    </coordinates>
+    <panel_attributes>Order
+--
+-id
+--
+-clientId
+--
+-orderDate
+--
+-isReturned
+--
+-returnDate
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>567</x>
+      <y>108</y>
+      <w>189</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>m1=1
+m2=n
+</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;30.0;190.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>639</x>
+      <y>153</y>
+      <w>117</w>
+      <h>234</h>
+    </coordinates>
+    <panel_attributes>m1=1
+m2=n
+</panel_attributes>
+    <additional_attributes>10.0;230.0;60.0;230.0;60.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>738</x>
+      <y>90</y>
+      <w>189</w>
+      <h>171</h>
+    </coordinates>
+    <panel_attributes>BookOrder
+--
+-id
+--
+-orderId
+--
+-bookId
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>252</x>
+      <y>108</y>
+      <w>153</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>m1=1
+m2=n
+</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;30.0;150.0;30.0</additional_attributes>
+  </element>
+</diagram>

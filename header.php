@@ -37,6 +37,12 @@
                         }
                         ?>
                             ><a href="clients.php">Czytelnicy</a></li>
+                        <li <?php
+                        if (stripos($fileName, 'loans.php') !== false) {
+                            echo 'class="active"';
+                        }
+                        ?>
+                            ><a href="loans.php">Wypożyczenia</a></li>
                     </ul>
                 </div>
             </div>

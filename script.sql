@@ -42,3 +42,11 @@ DROP TABLE Books;
 DROP TABLE Authors;
 DROP TABLE Loans;
 */
+
+-- 7 stycznia
+DECLARE
+     dataUrodzin  CLIENTS.DATE_OF_BIRTH%TYPE;
+BEGIN
+  SELECT add_months( trunc(sysdate), -12*20 ) INTO dataUrodzin FROM dual;
+  INSERT INTO CLIENTS VALUES (clients_seq.NEXTVAL, 'Franek', 'Kimono', 0, dataUrodzin);
+END;

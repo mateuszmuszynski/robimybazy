@@ -10,7 +10,15 @@ oci_execute($clients);
 echo '
 <div class="container">
     <div>
-        <h1>Lista książek</h1>
+        <div class="pull-left">
+            <h2>Lista książek</h2>
+        </div>
+        <div class="pull-right">
+        <h2></h2>
+            <button type="button" class="btn btn-primary pull-right">
+                <a style="color:white;text-decoration:none;" href="addBook.php">Dodaj książkę</a>
+            </button>            
+        </div>
     </div>
     ';
 echo '<table class="table table-hover">

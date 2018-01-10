@@ -10,9 +10,15 @@ oci_execute($loans);
 
 echo '
 <div class="container">
-    <div>
-        <h1>Lista wypożyczeń</h1>
-    </div>';
+    <div class="pull-left">
+            <h2>Lista wypożyczeń</h2>
+        </div>
+        <div class="pull-right">
+        <h2></h2>
+            <button type="button" class="btn btn-primary pull-right">
+                <a style="color:white;text-decoration:none;" href="index.php">Aby wypożyczyć przejdź do książek</a>
+            </button>            
+        </div>';
 echo '<table class="table table-hover">
     <thead>
       <tr>
@@ -27,7 +33,7 @@ while (($row = oci_fetch_array($loans, OCI_BOTH)) != false) {
     echo '<tr>';
     echo '<td>' . $row['BOOK_ID'] . '</td>';
     echo '<td>' . $row['CLIENT_ID'] . '</td>';
-    echo '<td>' . '<a href="endLoan.php?id=' . $row['BOOK_ID'] . '">Zwróć</>' . '</td>';
+    echo '<td>' . '<a href="completeLoan.php?id=' . $row['BOOK_ID'] . '">Zwróć</>' . '</td>';
     echo '</tr>';
 }
 

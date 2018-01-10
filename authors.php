@@ -2,21 +2,21 @@
 
 include_once('header.php');
 
-$sql = 'SELECT FIRST_NAME, LAST_NAME, GENDER, DATE_OF_BIRTH FROM CLIENTS';
+$sql = 'SELECT FIRST_NAME, LAST_NAME FROM AUTHORS';
 
-$clients = oci_parse($conn, $sql);
+$authors = oci_parse($conn, $sql);
 
-oci_execute($clients);
+oci_execute($authors);
 
 echo '
 <div class="container">
     <div class="pull-left">
-            <h2>Lista czytelników</h2>
+            <h2>Lista autorów książek</h2>
         </div>
         <div class="pull-right">
         <h2></h2>
             <button type="button" class="btn btn-primary pull-right">
-                <a style="color:white;text-decoration:none;" href="addClient.php">Dodaj czytelnika</a>
+                <a style="color:white;text-decoration:none;" href="addAuthor.php">Dodaj autora</a>
             </button>            
         </div>';
 echo '<table class="table table-hover">
@@ -24,22 +24,18 @@ echo '<table class="table table-hover">
       <tr>
         <th>Imie</th>
         <th>Nazwisko</th>
-        <th>Płeć</th>
-        <th>Data urodzenia<th>
       </tr>
     </thead>
     <tbody>';
 
-while (($row = oci_fetch_array($clients, OCI_BOTH)) != false) {
+while (($row = oci_fetch_array($authors, OCI_BOTH)) != false) {
     echo '<tr>';
     echo '<td>' . $row['FIRST_NAME'] . '</td>';
     echo '<td>' . $row['LAST_NAME'] . '</td>';
-    echo '<td>' . ($row['GENDER'] == '0' ? 'Mężczyzna' : 'Kobieta') . '</td>';
-    echo '<td>' . $row['DATE_OF_BIRTH'] . '</td>';
     echo '</tr>';
 }
 
-oci_free_statement($clients);
+oci_free_statement($authors);
 
 echo '</tbody></table>';
 

@@ -1,7 +1,6 @@
 <?php
 include_once('header.php');
 if (isset($_GET['save'])) {
-    $client = $_POST['client'];
     $loan = oci_parse($conn, "INSERT INTO LOANS (LOAN_ID, BOOK_ID, CLIENT_ID) VALUES (LOANS_SEQ.NEXTVAL, :bookId, :clientId)");
     oci_bind_by_name($loan, "bookId", $_GET['bookId']);    
     oci_bind_by_name($loan, "clientId", $_GET['clientId']);
@@ -23,7 +22,7 @@ oci_execute($book);
 ?>
 <div class="container">
     <div>
-        <h1>Wypożyczanie ksiązki</h1>
+        <h2>Wypożyczanie ksiązki</h2>
     </div>
     <form>
         <div class="form-group">
@@ -49,7 +48,7 @@ oci_execute($book);
         <?php
         echo '<input type="hidden" name="bookId" value="' . $_GET['id'] .'"/>';
         ?>
-        <button type="submit" class="btn btn-default" name='save'>Submit</button>
+        <button type="submit" class="btn btn-default pull-right" name='save'>Wypożycz</button>
     </form>
 </div>
 <?php

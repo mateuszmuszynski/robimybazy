@@ -21,44 +21,47 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Biblioteka</a>
+                    <a class="navbar-brand" href="index.php">Biblioteka</a>
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
+
+                        <li <?php
+                        if (stripos($fileName, 'authors.php') !== false) {
+                            echo 'class="active"';
+                        }
+                        ?>
+                            ><a href="authors.php">Autorzy</a>
+                        </li>
+
                         <li <?php
                         if (stripos($fileName, 'index.php') !== false) {
                             echo 'class="active"';
                         }
                         ?>
-                            ><a href="index.php">Książki</a></li>
+                            ><a href="index.php">Książki</a>
+                        </li>
+
                         <li <?php
                         if (stripos($fileName, 'clients.php') !== false) {
                             echo 'class="active"';
                         }
                         ?>
-                            ><a href="clients.php">Czytelnicy</a></li>
+                            ><a href="clients.php">Czytelnicy</a>
+                        </li>
+
                         <li <?php
                         if (stripos($fileName, 'loans.php') !== false) {
                             echo 'class="active"';
                         }
                         ?>
                             ><a href="loans.php">Wypożyczenia</a></li>
+
                     </ul>
                 </div>
             </div>
         </nav>
 
-        
         <?php
-$username = 'system';
-$password = 'system';
-$connectionString = 'localhost/XE';
-
-
-
-$conn = oci_connect($username, $password, $connectionString);
-if (!$conn) {
-    $e = oci_error();
-    trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
-}
+        include_once('phpDatabaseConnection.php');
         ?>

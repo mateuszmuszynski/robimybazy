@@ -13,7 +13,7 @@ oci_bind_by_name($loan, "gender", $gender);
 
 oci_execute($loan);
 oci_free_statement($loan);
-header('Location: index.php', true, 301);
+header('Location: clients.php', true, 301);
 
 exit();
 ?>

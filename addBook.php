@@ -3,7 +3,6 @@ include_once('header.php');
 
 $authors = oci_parse($conn, "SELECT A.AUTHOR_ID, A.first_name || ' ' || A.last_name AS NAME FROM AUTHORS A");
 oci_execute($authors);
-
 ?>
 <div class="container">
     <div>
@@ -28,7 +27,10 @@ oci_execute($authors);
             <label for="isbn">ISBN</label>
             <input type="text" class="form-control" name="isbn">
         </div>
-
+        <div class="form-group">
+            <label for="bookCount">Sztuki</label>
+            <input type="text" class="form-control" name="bookCount">
+        </div>
 
         <button type="submit" class="btn btn-default pull-right" name='save'>Dodaj</button>
     </form>

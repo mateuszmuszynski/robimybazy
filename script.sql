@@ -50,3 +50,6 @@ BEGIN
   SELECT add_months( trunc(sysdate), -12*20 ) INTO dataUrodzin FROM dual;
   INSERT INTO CLIENTS VALUES (clients_seq.NEXTVAL, 'Franek', 'Kimono', 0, dataUrodzin);
 END;
+
+alter table books
+add (bookCount number(2) default 0);

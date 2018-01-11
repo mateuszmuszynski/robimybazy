@@ -1,7 +1,8 @@
 <?php
+
 include_once('header.php');
 
-$sql = 'SELECT B.BOOK_ID, B.ISBN, B.TITLE, A.FIRST_NAME, A.LAST_NAME FROM BOOKS B JOIN AUTHORS A ON B.AUTHOR_ID = A.AUTHOR_ID';
+$sql = 'SELECT B.BOOK_ID, B.ISBN, B.TITLE, A.FIRST_NAME, A.LAST_NAME, B.BOOKCOUNT FROM BOOKS B JOIN AUTHORS A ON B.AUTHOR_ID = A.AUTHOR_ID';
 
 $clients = oci_parse($conn, $sql);
 
@@ -27,16 +28,19 @@ echo '<table class="table table-hover">
         <th>ISBN</th>
         <th>Tytuł</th>
         <th>Autor</th>
+        <th>Sztuk do wypożyczenia</th>
       </tr>
     </thead>
     <tbody>';
 
 while (($row = oci_fetch_array($clients, OCI_BOTH)) != false) {
     echo '<tr>';
-    echo '<td>' . $row['ISBN'] . '</td>';    
-    echo '<td>' . $row['TITLE'] . '</td>';    
-    echo '<td>' . $row['FIRST_NAME'] . ' ' . $row['LAST_NAME'] . '</td>';    
-    echo '<td>' . '<a href="loanBook.php?id=' . $row['BOOK_ID'] . '">Wypożycz</>' . '</td>';
+    echo '<td>' . $row['ISBN'] . '</td>';
+    echo '<td>' . $row['TITLE'] . '</td>';
+    echo '<td>' . $row['FIRST_NAME'] . ' ' . $row['LAST_NAME'] . '</td>';
+    echo '<td>' . $row['BOOKCOUNT'] . '</td>';
+    if ($row['BOOKCOUNT'] != '0')
+        echo '<td>' . '<a href="loanBook.php?id=' . $row['BOOK_ID'] . '">Wypożycz</>' . '</td>';
     echo '</tr>';
 }
 

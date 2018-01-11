@@ -27,7 +27,6 @@ echo '<table class="table table-hover">
         <th>ISBN</th>
         <th>Tytuł</th>
         <th>Autor</th>
-        <th><th>
       </tr>
     </thead>
     <tbody>';

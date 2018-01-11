@@ -10,7 +10,7 @@ oci_bind_by_name($loan, "lastName", $_POST['lastName']);
 
 oci_execute($loan);
 oci_free_statement($loan);
-header('Location: index.php', true, 301);
+header('Location: authors.php', true, 301);
 
 exit();
 ?>

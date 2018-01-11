@@ -2,7 +2,7 @@
 
 include_once('header.php');
 
-$sql = 'SELECT FIRST_NAME, LAST_NAME FROM AUTHORS';
+$sql = 'SELECT AUTHOR_ID, FIRST_NAME, LAST_NAME FROM AUTHORS';
 
 $authors = oci_parse($conn, $sql);
 
@@ -32,6 +32,7 @@ while (($row = oci_fetch_array($authors, OCI_BOTH)) != false) {
     echo '<tr>';
     echo '<td>' . $row['FIRST_NAME'] . '</td>';
     echo '<td>' . $row['LAST_NAME'] . '</td>';
+    echo '<td>' . '<a href="deleteAuthorSql.php?id=' . $row['AUTHOR_ID'] . '">Usuń</>' . '</td>';
     echo '</tr>';
 }
 

@@ -33,7 +33,7 @@ while (($row = oci_fetch_array($loans, OCI_BOTH)) != false) {
     echo '<tr>';
     echo '<td>' . $row['BOOK_ID'] . '</td>';
     echo '<td>' . $row['CLIENT_ID'] . '</td>';
-    echo '<td>' . '<a href="completeLoan.php?id=' . $row['BOOK_ID'] . '">Zwróć</>' . '</td>';
+    echo '<td>' . '<a href="deleteLoanSql2.php?id=' . $row['LOAN_ID'] . '">Zwróć</>' . '</td>';
     echo '</tr>';
 }
 

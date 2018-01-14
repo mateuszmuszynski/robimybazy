@@ -10,6 +10,13 @@
     </head>
     <body>
         <?php
+        $userCookie = 'user';
+
+        if (!isset($_COOKIE["user"])) {
+            header('Location: login.php', true, 301);
+            exit();
+        }
+
         $fileName = $_SERVER["REQUEST_URI"];
         ?>
         <nav class="navbar navbar-default">
@@ -57,6 +64,10 @@
                         ?>
                             ><a href="loans.php">Wypożyczenia</a></li>
 
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a>Jesteś zalogowany jako <?php echo $_COOKIE["user"] ?></a></li>
+                        <li><form style="padding: 10px 15px; padding-top: 15px; padding-bottom: 15px" name="logout" action="logout.php" method="post"><a href="#" onclick="document.forms['logout'].submit(); return false;">Wyloguj</a></form></li>
                     </ul>
                 </div>
             </div>

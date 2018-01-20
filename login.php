@@ -16,20 +16,21 @@
         include_once('phpDatabaseConnection.php');
         $error = false;
         if (isset($_POST["login"]) && isset($_POST["password"])) {
-            $sql = "SELECT 1 FROM USERS WHERE LOGIN = :userLogin AND PASSWORD = :userPassword";
+            $sql = "begin :r := USERLOGIN(:userLogin, :userPassword); end;";
             $user = oci_parse($conn, $sql);
+            $r;
             oci_bind_by_name($user, "userLogin", $_POST['login']);
             oci_bind_by_name($user, "userPassword", $_POST['password']);
+            oci_bind_by_name($user, "r", $r, 50);
 
             oci_execute($user);
 
-            while ($row = oci_fetch_assoc($user)) {
+            if ($r != null) {
                 setcookie("user", $_POST["login"], time() + (86400 * 30), "/");
                 oci_free_statement($user);
                 header('Location: index.php', true, 301);
                 exit();
             }
-
             $error = true;
         }
         ?>

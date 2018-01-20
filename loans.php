@@ -2,7 +2,9 @@
 
 include_once('header.php');
 
-$sql = 'select * from loans';
+$sql = "SELECT L.LOAN_ID AS LOAN_ID, b.TITLE AS TITLE, c.FIRST_NAME || ' ' || c.LAST_NAME as NAME
+FROM Books b, Clients c, Loans l
+WHERE b.BOOK_ID = l.BOOK_ID AND c.CLIENT_ID = l.CLIENT_ID";
 
 $loans = oci_parse($conn, $sql);
 
@@ -31,9 +33,9 @@ echo '<table class="table table-hover">
 
 while (($row = oci_fetch_array($loans, OCI_BOTH)) != false) {
     echo '<tr>';
-    echo '<td>' . $row['BOOK_ID'] . '</td>';
-    echo '<td>' . $row['CLIENT_ID'] . '</td>';
-    echo '<td>' . '<a href="deleteLoanSql2.php?id=' . $row['LOAN_ID'] . '">Zwróć</>' . '</td>';
+    echo '<td>' . $row['TITLE'] . '</td>';
+    echo '<td>' . $row['NAME'] . '</td>';
+    echo '<td>' . '<a href="deleteLoanSql.php?id=' . $row['LOAN_ID'] . '">Zwróć</>' . '</td>';
     echo '</tr>';
 }
 

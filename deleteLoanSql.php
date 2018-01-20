@@ -2,7 +2,7 @@
 
 include_once('phpDatabaseConnection.php');
 
-$sql = "DELETE FROM LOANS WHERE loan_id=:id";
+$sql = "begin DOKONAJ_ZWROTU(:id); end;";
 
 $loan = oci_parse($conn, $sql);
 oci_bind_by_name($loan, "id", $_GET['id']);

@@ -2,8 +2,7 @@
 
 include_once('phpDatabaseConnection.php');
 
-$sql = "INSERT INTO BOOKS VALUES (BOOKS_SEQ.NEXTVAL, :authorId, :isbn, :title, :bookCount)";
-
+$sql = "INSERT INTO KSIAZKI_AUTORA VALUES (:authorId, null, null, :title, :isbn, :bookCount, null)";
 $loan = oci_parse($conn, $sql);
 oci_bind_by_name($loan, "authorId", $_POST['authorId']);
 oci_bind_by_name($loan, "isbn", $_POST['isbn']);

@@ -41,6 +41,8 @@ while (($row = oci_fetch_array($clients, OCI_BOTH)) != false) {
     echo '<td>' . $row['BOOKCOUNT'] . '</td>';
     if ($row['BOOKCOUNT'] != '0')
         echo '<td>' . '<a href="loanBook.php?id=' . $row['BOOK_ID'] . '">Wypożycz</>' . '</td>';
+    else
+        echo '<td></td>';
     echo '</tr>';
 }
 

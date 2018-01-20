@@ -39,11 +39,12 @@ while (($row = oci_fetch_array($clients, OCI_BOTH)) != false) {
     echo '<td>' . $row['TITLE'] . '</td>';
     echo '<td>' . $row['FIRST_NAME'] . ' ' . $row['LAST_NAME'] . '</td>';
     echo '<td>' . $row['BOOKCOUNT'] . '</td>';
+    echo '<td>' . '<a href="updateBook.php?id=' . $row['BOOK_ID'] . '">Aktualizuj</>' . '</td>';
     if ($row['BOOKCOUNT'] != '0')
         echo '<td>' . '<a href="loanBook.php?id=' . $row['BOOK_ID'] . '">Wypożycz</>' . '</td>';
     else
         echo '<td></td>';
-    echo '<td>' . '<a href="deleteBookSql.php?id=' . $row['BOOK_ID'] . '">Usuń książkę</>' . '</td>';
+    echo '<td>' . '<a href="deleteBookSql.php?id=' . $row['BOOK_ID'] . '">Usuń</>' . '</td>';
     echo '</tr>';
 }
 
